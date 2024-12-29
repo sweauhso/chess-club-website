@@ -4,10 +4,7 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -27,6 +24,22 @@ public class AnnouncementsController {
     @GetMapping("/{title}")
     public ResponseEntity<Announcements> getAnnouncementById(@PathVariable String title) {
         return new ResponseEntity<Announcements>(announcementService.singleAnnouncement(title), HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<Announcements> createAnnouncement(@RequestBody Announcements newAnnouncement) {
+        Announcements createdAnnouncement = announcementService.saveAnnouncement(newAnnouncement);
+        return new ResponseEntity<>(createdAnnouncement, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{title}")
+    public ResponseEntity<String> deleteAnnouncementByTitle(@PathVariable String title) {
+        boolean isDeleted = announcementService.deleteAnnouncementByTitle(title);
+        if (isDeleted) {
+            return new ResponseEntity<>("Announcement deleted successfully", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Announcement not found", HttpStatus.NOT_FOUND);
+        }
     }
 
 
