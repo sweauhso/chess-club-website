@@ -1,5 +1,6 @@
 package dev.uofc_chessclub.Chess.Club;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +13,9 @@ public class AnnouncementService {
 
     public List<Announcements> allAnnouncements() {
         return announcementRepository.findAll();
+    }
+
+    public Announcements singleAnnouncement(String title) {
+        return announcementRepository.findByTitle(title).orElse(null);
     }
 }
