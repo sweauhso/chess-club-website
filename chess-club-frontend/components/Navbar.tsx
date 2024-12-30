@@ -8,8 +8,9 @@ const Navbar = () => {
         <Image className="m-4" src={Logo} alt="Chess Club Logo" height={80} />
         <div className="navbar-buttons text-green">
             <button>Home</button>
-            <button>About</button>
-            <button>Services</button>
+            <button>Announcements</button>
+            <button>About Us</button>
+            <button>Contact</button>
         </div>
         <div className='admin-button text-green'>
             <button>Admin</button>
