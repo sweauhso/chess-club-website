@@ -5,7 +5,7 @@ import ChessBoard from "@/public/ChessBoard.png"
 
 const AboutUs = () => {
   return (
-    <div className='section mt-6'>
+    <div className='section mt-6 mb-14'>
         <div className='banner bg-grey text-green font-bold m-10'>
             About Us
         </div>
@@ -15,7 +15,6 @@ const AboutUs = () => {
             src={ChessBoard} 
             alt="Chess Board" 
             width={300}  
-            height={300} 
             />
             <div>
                 <TextGenerateEffect 
