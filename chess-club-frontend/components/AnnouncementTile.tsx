@@ -13,7 +13,7 @@ interface AnnouncementTileProps {
           <h1 className="font-black text-2xl ms:text-3xl">{title}</h1>
           <p className="mt-4 text-left">{description}</p>
           <p className="mt-2 italic"><span className="font-bold">Date:</span> {date}</p>
-          <a href={link} target="_blank" rel="noopener noreferrer" className="w-full flex">
+          <a href={link} target="_blank" rel="noopener noreferrer">
             <button className=" bg-green mt-10 border border-black-ish font-black hover:scale-105 transition-transform duration-500 ms:text-xl rounded-full px-4 py-1 flex items-center">
               Check it out
             </button>
