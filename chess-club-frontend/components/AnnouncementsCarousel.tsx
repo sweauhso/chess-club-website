@@ -30,17 +30,12 @@ const AnnouncementsCarousel = () => {
       ];
   return (
     <div className='section mt-6 mb-14'>
-        <div className='banner bg-grey text-green font-bold mt-10'>
+        <div className='banner bg-grey text-green font-bold m-10'>
             Announcements
         </div>
         <div>
-            <div className="px-10 bg-deep-blue md:px-28 py-8 ml:py-24 mb-10 flex flex-col items-center">
+            <div className="px-10 bg-deep-blue md:px-28  mb-10 flex flex-col items-center">
         <div className="max-w-[1200px] w-full">
-            <div className="border border-white text-white rounded-full mb-4 md:mb-6 flex px-4 py-2">
-            <h1 className="font-medium italic text-2xl md:text-4xl">
-                Announcements
-            </h1>
-            </div>
             <Swiper
             modules={[Navigation]}
             navigation={{
