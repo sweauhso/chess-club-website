@@ -20,7 +20,7 @@ const ContactUs = () => {
 
   return (
     <div className='section mt-6'>
-      <div className='banner bg-grey text-green font-bold'>
+      <div className='banner mt-4 bg-grey text-green font-bold'>
             Contact Us
         </div>
         <div className='w-full flex items-center justify-center bg-grey'>
@@ -28,7 +28,7 @@ const ContactUs = () => {
             {contacts.map((contact) => (
               <div
                 key={contact.id}
-                className="w-[20%] bg-white shadow-md rounded-lg p-4 mb-4 flex flex-col items-start"
+                className="w-[20%] bg-gray-300 shadow-md rounded-lg p-4 mb-4 flex flex-col items-start"
               >
                 <h2 className="text-xl font-semibold">{contact.name}</h2>
                 <p className="text-sm text-gray-700">Email: {contact.email}</p>
