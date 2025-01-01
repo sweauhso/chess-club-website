@@ -30,7 +30,7 @@ const AnnouncementsCarousel = () => {
       ];
   return (
     <div className='section mt-6 mb-14'>
-        <div className='banner bg-grey text-green font-bold m-10 mb-16'>
+        <div id="announcements" className='banner bg-grey text-green font-bold m-10 mb-16'>
             Announcements
         </div>
         <div>

@@ -6,7 +6,7 @@ import ChessBoard from "@/public/ChessBoard.png"
 const AboutUs = () => {
   return (
     <div className='section mt-6 mb-14'>
-        <div className='banner bg-grey text-green font-bold m-10 mb-16'>
+        <div id="about-us" className='banner bg-grey text-green font-bold m-10 mb-16'>
             About Us
         </div>
         <div className="md:px-28 p-10 ml:p-0 ml:w-[40%] mt-0 pt-0">

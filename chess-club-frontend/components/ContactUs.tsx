@@ -20,7 +20,7 @@ const ContactUs = () => {
 
   return (
     <div className='section mt-6'>
-      <div className='banner mt-4 bg-grey text-green font-bold'>
+      <div id="contact" className='banner mt-4 bg-grey text-green font-bold'>
             Contact Us
         </div>
         <div className='w-full flex items-center justify-center bg-grey'>
