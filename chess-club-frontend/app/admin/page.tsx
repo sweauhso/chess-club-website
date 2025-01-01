@@ -114,6 +114,12 @@ const page = () => {
             </button>
           </div>
       </div>
+      <div className='flex flex-col items-center justify-center w-full mb-8'>
+        <h1>Please contact if there are any issues</h1>
+        <h1>Joshua Geng</h1>
+        <h1>swegengjoshua@gmail.com</h1>
+        <h1>403-990-1077</h1>
+      </div>
     </main>
   )
 }
