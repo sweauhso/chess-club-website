@@ -1,21 +1,33 @@
-import React from 'react'
+'use client'
+
+import React, { useState, useEffect } from 'react'
+import axios from 'axios';
+
+interface Contact {
+  id: number;
+  name: string;
+  email: string;
+  link: string;
+}
 
 const ContactUs = () => {
-  // Samples for contacts
-  const contacts = [
-    {
-      id: "64c999f9e4b0e49b1c2f5e0a",
-      name: "John Doe",
-      email: "johndoe@example.com",
-      link: "https://johndoe.com"
-    },
-    {
-      id: "64c999f9e4b0e49b1c2f5e0b",
-      name: "Jane Smith",
-      email: "janesmith@example.com",
-      link: "https://janesmith.dev"
-    }
-  ];
+  const [contacts, setContacts] = useState<Contact[]>([]);
+  const [error, setError] = useState<string>('');
+
+  useEffect(() => {
+    const fetchContacts = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/v1/contact");
+        // console.log('Fetched Contacts: ', response.data); for debugging
+        setContacts(response.data);
+      } catch (err) {
+        console.error('HAWKError fetching contacts:', err);
+        setError('Error fetching contacts');
+      }
+    };
+
+    fetchContacts();
+  }, []);
   
 
   return (
