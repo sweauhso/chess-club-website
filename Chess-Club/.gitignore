@@ -4,7 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-## DEPEND ##
+### DEPEND ###
 /node_modules
 
 ### STS ###
@@ -38,3 +38,6 @@ build/
 ### ENV Files ###
 .env
 .env.example
+
+### MISC ###
+/target
