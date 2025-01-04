@@ -23,7 +23,7 @@ const Navbar = () => {
         <button onClick={() => scrollToSection("contact")}>Contact</button>
       </div>
       <div className="admin-button text-green">
-        <button onClick={() => router.push("/admin")}>Admin</button>
+        <button onClick={() => router.push("/login")}>Admin</button>
       </div>
     </div>
   );

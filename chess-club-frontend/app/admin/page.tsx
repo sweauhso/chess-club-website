@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react'
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -6,6 +9,11 @@ const page = () => {
       <div className='banner bg-grey text-green font-bold mb-16'>
             Admin Page
         </div>
+        <Link href="/">
+      <button className="bg-green mb-16 text-white font-bold py-2 px-4 rounded-md">
+        Back to Home
+      </button>
+    </Link>
       <div className='section mb-16'>
         <div className='text-xl text-green font-bold mb-4'>
           Create Announcements
