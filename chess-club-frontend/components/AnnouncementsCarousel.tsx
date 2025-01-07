@@ -1,33 +1,38 @@
 'use client'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper-bundle.css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import AnnouncementTile from './AnnouncementTile';
+import axios from 'axios';
 
+interface Announcement {
+  title: string;
+  description: string;
+  date: string;
+  link: string;
+}
 
 const AnnouncementsCarousel = () => {
-    const carouselData = [
-        {
-          title: 'Chess Tournament',
-          description: 'Join the chess tournament this summer. A challenge for all levels! Join the chess tournament this summer. A challenge for all levels! Join the chess tournament this summer. A challenge for all levels! Join the chess tournament this summer. A challenge for all levels!',
-          date: 'July 1, 2024',
-          link: 'https://example.com',
-        },
-        {
-          title: 'Chess Workshop',
-          description: 'Attend our chess workshop for beginners and experts alike!',
-          date: 'August 15, 2024',
-          link: 'https://example.com',
-        },
-        {
-          title: 'Chess Club Meetup',
-          description: 'Meet with fellow chess enthusiasts for casual games and learning.',
-          date: 'September 10, 2024',
-          link: 'https://example.com',
-        },
-      ];
+  const [carouselData, setCarouselData] = useState<Announcement[]>([]);
+  const [error, setError] = useState<string>('');
+
+  useEffect(() => {
+    const fetchAnnouncements = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/v1/announcements");
+        // console.log('Fetched Anns: ', response.data); for debugging
+        setCarouselData(response.data);
+      } catch (err) {
+        console.error('Error fetching announcements:', err);
+        setError('Error fetching announcements');
+      }
+    };
+
+    fetchAnnouncements();
+  }, []);
+
   return (
     <div className='section mt-6 mb-14'>
         <div id="announcements" className='banner bg-grey text-green font-bold m-10 mb-16'>
