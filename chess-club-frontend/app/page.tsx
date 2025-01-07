@@ -5,8 +5,8 @@ import AnnouncementsCarousel from "@/components/AnnouncementsCarousel";
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center bg-white w-full">
-      <div className="mainpage flex flex-col items-center justify-center w-full">
+    <main className="flex flex-col items-center bg-dark-bg w-full min-h-screen">
+      <div className="mainpage flex flex-col items-center justify-center w-full max-w-screen-xl mx-auto">
         <Navbar />
         <AboutUs />
         <AnnouncementsCarousel />

@@ -148,12 +148,12 @@ const Page = () => {
   };
 
   return (
-    <main className="flex flex-col items-center bg-white w-full">
-      <div className="banner bg-grey text-green font-bold mb-16">
+    <main className="flex flex-col items-center bg-dark-bg w-full">
+      <div className="banner bg-medium-bg text-green font-bold mb-16">
         Admin Page
       </div>
       <Link href="/">
-        <button className="bg-green mb-16 text-white font-bold py-2 px-4 rounded-md">
+        <button className="bg-green mb-16 text-black font-bold py-2 px-4 rounded-md hover:bg-green-700">
           Back to Home
         </button>
       </Link>
@@ -163,7 +163,7 @@ const Page = () => {
         <div className="text-xl text-green font-bold mb-4">
           Create Announcements
         </div>
-        <div className="flex flex-col justify-center items-center bg-light-grey gap-8 ">
+        <div className="flex flex-col justify-center items-center bg-light-grey gap-8 text-dark-sub-text">
           <div>
             <h1>Title</h1>
             <input
@@ -171,7 +171,7 @@ const Page = () => {
               placeholder="Enter title here..."
               value={announcementTitle}
               onChange={(e) => setAnnouncementTitle(e.target.value)}
-              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500 text-black"
             />
           </div>
           <div>
@@ -181,7 +181,7 @@ const Page = () => {
               placeholder="Enter description here..."
               value={announcementDescription}
               onChange={(e) => setAnnouncementDescription(e.target.value)}
-              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500 text-black"
             />
           </div>
           <div>
@@ -191,7 +191,7 @@ const Page = () => {
               placeholder="YYYY-MM-DD"
               value={announcementDate}
               onChange={(e) => setAnnouncementDate(e.target.value)}
-              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500 text-black"
             />
           </div>
           <div>
@@ -201,12 +201,12 @@ const Page = () => {
               placeholder="Enter link here..."
               value={announcementLink}
               onChange={(e) => setAnnouncementLink(e.target.value)}
-              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500 text-black"
             />
           </div>
           <button
             onClick={handleCreateAnnouncement}
-            className="bg-green text-white font-bold py-2 px-4 rounded-md"
+            className="bg-green text-black font-bold py-2 px-4 rounded-md hover:bg-green-700"
           >
             Submit
           </button>
@@ -217,7 +217,7 @@ const Page = () => {
       <div className="section mb-16">
         <div className="text-xl text-green font-bold">Delete Announcements</div>
         <div className="flex flex-col justify-center bg-light-grey p-6 rounded-lg gap-4">
-          <h1 className="font-medium mb-2">Select Announcement</h1>
+          <h1 className="font-medium mb-2 text-dark-sub-text">Select Announcement</h1>
           <select
             className="border border-gray-400 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-500"
             value={selectedAnnouncement}
@@ -232,7 +232,7 @@ const Page = () => {
           </select>
           <button
             onClick={handleDeleteAnnouncement}
-            className="bg-red-500 text-white font-bold py-2 px-4 rounded-md"
+            className="bg-red-500 text-white font-bold py-2 px-4 rounded-md hover:bg-red-600"
           >
             Delete
           </button>
@@ -244,7 +244,7 @@ const Page = () => {
         <div className="text-xl text-green font-bold mb-4">
           Create New Contact
         </div>
-        <div className="flex flex-col justify-center items-center bg-light-grey gap-8 ">
+        <div className="flex flex-col justify-center items-center bg-light-grey gap-8 text-dark-sub-text">
           <div>
             <h1>Full Name</h1>
             <input
@@ -252,7 +252,7 @@ const Page = () => {
               placeholder="Enter name here..."
               value={contactFullName}
               onChange={(e) => setContactFullName(e.target.value)}
-              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500 text-black"
             />
           </div>
           <div>
@@ -262,7 +262,7 @@ const Page = () => {
               placeholder="Enter email here..."
               value={contactEmail}
               onChange={(e) => setContactEmail(e.target.value)}
-              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500 text-black"
             />
           </div>
           <div>
@@ -272,12 +272,12 @@ const Page = () => {
               placeholder="Enter link here..."
               value={contactLink}
               onChange={(e) => setContactLink(e.target.value)}
-              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500"
+              className="border border-gray-400 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-gray-500 text-black"
             />
           </div>
           <button
             onClick={handleCreateContact}
-            className="bg-green text-white font-bold py-2 px-4 rounded-md"
+            className="bg-green text-black font-bold py-2 px-4 rounded-md hover:bg-green-700"
           >
             Submit
           </button>
@@ -288,7 +288,7 @@ const Page = () => {
       <div className="section mb-16">
         <div className="text-xl text-green font-bold">Delete Contact</div>
         <div className="flex flex-col justify-center bg-light-grey p-6 rounded-lg gap-4">
-          <h1 className="font-medium mb-2">Select Contact</h1>
+          <h1 className="font-medium mb-2 text-dark-sub-text">Select Contact</h1>
           <select
             className="border border-gray-400 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-gray-500"
             value={selectedContact}
@@ -303,7 +303,7 @@ const Page = () => {
           </select>
           <button
             onClick={handleDeleteContact}
-            className="bg-red-500 text-white font-bold py-2 px-4 rounded-md"
+            className="bg-red-500 text-white font-bold py-2 px-4 rounded-md hover:bg-red-600"
           >
             Delete
           </button>
