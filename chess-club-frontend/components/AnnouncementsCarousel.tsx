@@ -17,15 +17,15 @@ interface Announcement {
 
 const AnnouncementsCarousel = () => {
   const [carouselData, setCarouselData] = useState<Announcement[]>([]);
-  const [error, setError] = useState<string>("");
+  const [error, setError] = useState<string | null>(null); // ✅ Moved inside component
 
   useEffect(() => {
     const fetchAnnouncements = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8080/api/v1/announcements"
+          "https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/announcements" 
         );
-        setCarouselData(response.data);
+        setCarouselData(response.data as Announcement[]);
       } catch (err) {
         console.error("Error fetching announcements:", err);
         setError("Error fetching announcements");
@@ -46,32 +46,31 @@ const AnnouncementsCarousel = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-deep-blue p-6 md:p-8 rounded-2xl shadow-lg">
           <div className="max-w-[1200px] w-full mx-auto">
-            <Swiper
-              modules={[Navigation]}
-              navigation={{
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-              }}
-              spaceBetween={30}
-              slidesPerView={1}
-              className="swiper-container"
-            >
-              {carouselData.map((announcement, index) => (
-                <SwiperSlide
-                  key={index}
-                  className="flex justify-center items-center"
-                >
-                  <AnnouncementTile
-                    title={announcement.title}
-                    description={announcement.description}
-                    date={announcement.date}
-                    link={announcement.link}
-                  />
-                </SwiperSlide>
-              ))}
-              <div className="swiper-button-prev"></div>
-              <div className="swiper-button-next"></div>
-            </Swiper>
+            {error ? ( // ✅ Display error if fetch fails
+              <p className="text-red-500 text-center">{error}</p>
+            ) : (
+              <Swiper
+                modules={[Navigation]}
+                navigation={true} // ✅ Simplified navigation setup
+                spaceBetween={30}
+                slidesPerView={1}
+                className="swiper-container"
+              >
+                {carouselData.map((announcement, index) => (
+                  <SwiperSlide
+                    key={index}
+                    className="flex justify-center items-center"
+                  >
+                    <AnnouncementTile
+                      title={announcement.title}
+                      description={announcement.description}
+                      date={announcement.date}
+                      link={announcement.link}
+                    />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            )}
           </div>
         </div>
       </div>

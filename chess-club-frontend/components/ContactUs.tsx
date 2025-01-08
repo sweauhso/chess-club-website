@@ -12,16 +12,14 @@ interface Contact {
 
 const ContactUs = () => {
   const [contacts, setContacts] = useState<Contact[]>([]);
-  const [error, setError] = useState<string>('');
 
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/v1/contact");
+        const response = await axios.get("https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/contact");
         setContacts(response.data);
       } catch (err) {
         console.error('Error fetching contacts:', err);
-        setError('Error fetching contacts');
       }
     };
 

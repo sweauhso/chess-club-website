@@ -45,7 +45,7 @@ const Page = () => {
     // Fetch announcements
     const fetchAnnouncements = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/v1/announcements");
+        const response = await axios.get("https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/announcements");
         console.log('Fetched Anns: ', response.data); // for debugging
         setAnnouncements(response.data); // assuming response.data is an array
       } catch (error) {
@@ -56,7 +56,7 @@ const Page = () => {
     // Fetch contacts
     const fetchContacts = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/api/v1/contact");
+        const response = await axios.get("https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/contact");
         setContacts(response.data); // assuming response.data is an array
       } catch (error) {
         console.error("Error fetching contacts:", error);
@@ -70,7 +70,7 @@ const Page = () => {
   // Handler for Create Announcement
   const handleCreateAnnouncement = async () => {
     try {
-      const response = await axios.post("http://localhost:8080/api/v1/announcements", {
+      const response = await axios.post("https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/announcements", {
         title: announcementTitle,
         description: announcementDescription,
         date: announcementDate,
@@ -79,7 +79,7 @@ const Page = () => {
       alert("Announcement created successfully!");
 
       // Update the announcements list after successful submission
-      const updatedAnnouncements = await axios.get("http://localhost:8080/api/v1/announcements");
+      const updatedAnnouncements = await axios.get("https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/announcements");
       setAnnouncements(updatedAnnouncements.data);
 
       // Clear the form fields after successful submission
@@ -96,7 +96,7 @@ const Page = () => {
   // Handler for Create Contact
   const handleCreateContact = async () => {
     try {
-      const response = await axios.post("http://localhost:8080/api/v1/contact", {
+      const response = await axios.post("https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/contact", {
         name: contactFullName,
         email: contactEmail,
         link: contactLink,
@@ -104,7 +104,7 @@ const Page = () => {
       alert("Contact created successfully!");
 
       // Update the contacts list after successful submission
-      const updatedContacts = await axios.get("http://localhost:8080/api/v1/contact");
+      const updatedContacts = await axios.get("https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/contact");
       setContacts(updatedContacts.data);
 
       // Clear the form fields after successful submission
@@ -121,11 +121,11 @@ const Page = () => {
   const handleDeleteAnnouncement = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/api/v1/announcements/${selectedAnnouncement}`
+        `https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/announcements/${selectedAnnouncement}`
       );
       alert("Announcement deleted successfully!");
       // Optionally, re-fetch announcements after deletion to update the list
-      const updatedAnnouncements = await axios.get("http://localhost:8080/api/v1/announcements");
+      const updatedAnnouncements = await axios.get("https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/announcements");
       setAnnouncements(updatedAnnouncements.data);
     } catch (error) {
       console.error("Error deleting announcement:", error);
@@ -136,10 +136,10 @@ const Page = () => {
   // Handler for Delete Contact
   const handleDeleteContact = async () => {
     try {
-      const response = await axios.delete(`http://localhost:8080/api/v1/contact/${selectedContact}`);
+      const response = await axios.delete(`https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/contact/${selectedContact}`);
       alert("Contact deleted successfully!");
       // Optionally, re-fetch contacts after deletion to update the list
-      const updatedContacts = await axios.get("http://localhost:8080/api/v1/contact");
+      const updatedContacts = await axios.get("https://chess-club-backend-bd6f865484d6.herokuapp.com/api/v1/contact");
       setContacts(updatedContacts.data);
     } catch (error) {
       console.error("Error deleting contact:", error);
